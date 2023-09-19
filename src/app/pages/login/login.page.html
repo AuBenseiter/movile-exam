@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+  <div class="flex-center">
+    <ion-grid>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Soy un Login Manito!!!</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item>
+            <ion-input type="email" label="SoyUnEmail" labelPlacement="floating" [(ngModel)]="username" placeholder="alumno@duocuc.cl"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" label="SoyUnaContrasenha" labelPlacement="floating" [(ngModel)]="password" placeholder=""></ion-input>
+          </ion-item>
+        </ion-card-content>
+
+        <ion-button fill="clear" size="full" (click)="forgotPassword()">Forgot email/password</ion-button>
+        <ion-button color="success" size="full" (click)="login()">Login</ion-button>
+      </ion-card>
+    </ion-grid>
+  </div>
+</ion-content>
