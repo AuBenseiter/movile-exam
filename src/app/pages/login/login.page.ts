@@ -2,34 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { StaticAuthService } from '../../services/static-auth.service';
+import { ModalController } from '@ionic/angular';
 
 import {IonicModule, NavController} from '@ionic/angular';
-
-
-
+import {ComponentsModule} from "../../components/components.module";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule, ComponentsModule]
 })
 export class LoginPage implements OnInit {
   //Variables
   username: string = '';
   password: string = '';
 
-  //Credenciales estaticas
-  private staticCredentials = [
-    {username: 'usuario', password: '123'},
-    {username: 'usuario2', password: '123'}
-
-  ];
   constructor(
     private navCtrl: NavController,
-    private router: Router
+    private router: Router,
+    private authService: StaticAuthService,
   ) { }
 
   ngOnInit() {
@@ -40,8 +34,9 @@ export class LoginPage implements OnInit {
     console.log('Password:', this.password);
 
     //Verificacion las credenciales
-    const user = this.staticCredentials.find(
-      (cred) => cred.username === this.username && cred.password === this.password
+    const credentials = this.authService.getCredentials();
+    const user = credentials.find(
+      (cred : any) => cred.username === this.username && cred.password === this.password
     );
 
     if (user) {
@@ -55,6 +50,6 @@ export class LoginPage implements OnInit {
     }
   }
   forgotPassword() {
-    this.navCtrl.navigateForward('/forgot-credentials');
+    this.navCtrl.navigateForward('/recover');
   }
 }

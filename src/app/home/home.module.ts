@@ -2,16 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { HomePage } from './home.page';
+import {ComponentsModule} from "../components/components.module";
 
 
 
 @NgModule({
-  declarations: [HomePage],
+  declarations: [
+
+  ],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    ComponentsModule
   ],
-  exports: [HomePage]
+  exports: []
 })
 
 export class HomeModule { }

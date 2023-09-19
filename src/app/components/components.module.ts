@@ -2,16 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import {HeaderComponent} from "./header/header.component";
-
+import {ModalSuccessComponent} from "./modal-success/modal-success.component";
+import {IonicModule} from "@ionic/angular";
 @NgModule({
   declarations: [
-    HeaderComponent
+      HeaderComponent,
+      ModalSuccessComponent
   ],
   imports: [
-    CommonModule,
+      CommonModule,
+      IonicModule
   ],
   exports: [
-    HeaderComponent
+      HeaderComponent,
+      ModalSuccessComponent
   ]
 })
 export class ComponentsModule { }

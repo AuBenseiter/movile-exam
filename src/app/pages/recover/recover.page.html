@@ -1,0 +1,23 @@
+<app-header titulo="recuperar contrasenha"></app-header>
+<ion-content [fullscreen]="true">
+  <div class="flex-center">
+    <ion-grid>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Soy una recuperacion de Contraseña!!!</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item>
+            <ion-input type="email" label="Correo Electrónico" labelPlacement="floating" [(ngModel)]="username" placeholder="alumno@duocuc.cl"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" label="Nueva Contraseña" labelPlacement="floating" [(ngModel)]="newPassword" placeholder=""></ion-input>
+          </ion-item>
+        </ion-card-content>
+
+        <ion-button color="success" size="full" (click)="resetPassword()">Recuperar</ion-button>
+      </ion-card>
+    </ion-grid>
+  </div>
+</ion-content>
