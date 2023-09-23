@@ -13,7 +13,8 @@ import {ComponentsModule} from "../components/components.module";
   imports: [
     CommonModule,
     IonicModule,
-    ComponentsModule
+    ComponentsModule,
+
   ],
   exports: []
 })
